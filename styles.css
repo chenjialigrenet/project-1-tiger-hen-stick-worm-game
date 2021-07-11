@@ -1,0 +1,83 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 18px;
+}
+
+body {
+  font-family: 'Nunito', sans-serif;
+  font-weight: 400;
+  height: 100vh;
+  color: #333;
+  /* background-image */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+main {
+  width: 80vw;
+  height: 85vh;
+  background-color: rgba(255, 255, 255, 0.35);
+  box-shadow: 0 3rem 5rem rgba(0, 0, 0, 0.25);
+  border-radius: 9px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+/* /////////////// */
+#title {
+  border: orangered 1px solid;
+  padding: 1rem;
+  text-align: center;
+}
+
+h1 {
+  font-size: 28px;
+}
+/* /////////////// */
+#hero {
+  border: dodgerblue 1px solid;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+}
+
+#player {
+  border: black 1px solid;
+  padding: 9rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+#player-pic {
+  padding: 0.5em;
+}
+
+#computer {
+  border: black 1px solid;
+  padding: 9rem;
+  display: flex;
+  align-items: center;
+}
+/* /////////////// */
+#middle-section {
+  /* position: absolute;
+  top: 
+  left:  */
+  border: fuchsia 1px solid;
+  text-align: center;
+}
+
+.hide {
+  display: none;
+}
