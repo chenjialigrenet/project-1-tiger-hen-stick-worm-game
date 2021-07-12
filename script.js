@@ -23,7 +23,7 @@ const gameState = {
 ///////functions
 const renderSelectedPicture = function () {
   //// update DOM selected-picture element with gameState.playerSelection
-  playerSelectedPicture.innerHTML = gameState.playerSelection;
+  playerSelectedPicture.innerHTML = `<img src="images/${gameState.playerSelection}.png">`;
 };
 
 const startTurn = function () {
@@ -102,9 +102,10 @@ btnConfirmSelect.addEventListener('click', () => {
   //btnSelectPrevious.classList.add('hide');
 
   //generate a random computer picture
-  computerSelectedPicture.innerHTML =
+  let randomComputerPicture =
     pictures[Math.floor(Math.random() * pictures.length)];
-  console.log(computerSelectedPicture.innerHTML);
+  computerSelectedPicture.innerHTML = `<img src="images/${randomComputerPicture}.png">`;
+
   //count down or setTimeout
   // countDown();
   //flip both cards
@@ -112,11 +113,13 @@ btnConfirmSelect.addEventListener('click', () => {
   //compare
   //update score
   if (gameState.playerSelection === 'tiger') {
-    if (computerSelectedPicture.innerHTML === 'hen') {
+    if (computerSelectedPicture.innerHTML === '<img src="images/hen.png">') {
       console.log(`You win 🎉 `);
       gameState.playerScore += 1;
       playerScore.innerHTML = gameState.playerScore;
-    } else if (computerSelectedPicture.innerHTML === 'stick') {
+    } else if (
+      computerSelectedPicture.innerHTML === '<img src="images/stick.png">'
+    ) {
       console.log(`You loose 💩`);
       gameState.computerScore += 1;
       computerScore.innerHTML = gameState.computerScore;
@@ -124,7 +127,7 @@ btnConfirmSelect.addEventListener('click', () => {
       countdownResultContainer.innerHTML = `It's a tie 🤝`;
     }
   } else if (gameState.playerSelection === 'hen') {
-    if (computerSelectedPicture.innerHTML === 'worm') {
+    if (computerSelectedPicture.innerHTML === '<img src="images/worm.png">') {
       console.log(`You win 🎉 `);
       gameState.playerScore += 1;
       playerScore.innerHTML = gameState.playerScore;
@@ -136,11 +139,13 @@ btnConfirmSelect.addEventListener('click', () => {
       console.log(`It's a tie 🤝`);
     }
   } else if (gameState.playerSelection === 'worm') {
-    if (computerSelectedPicture.innerHTML === 'stick') {
+    if (computerSelectedPicture.innerHTML === '<img src="images/stick.png">') {
       console.log(`You win 🎉 `);
       gameState.playerScore += 1;
       playerScore.innerHTML = gameState.playerScore;
-    } else if (computerSelectedPicture.innerHTML === 'hen') {
+    } else if (
+      computerSelectedPicture.innerHTML === '<img src="images/hen.png">'
+    ) {
       console.log(`You loose 💩`);
       gameState.computerScore += 1;
       computerScore.innerHTML = gameState.computerScore;
@@ -148,11 +153,13 @@ btnConfirmSelect.addEventListener('click', () => {
       console.log(`It's a tie 🤝`);
     }
   } else if (gameState.playerSelection === 'stick') {
-    if (computerSelectedPicture.innerHTML === 'tiger') {
+    if (computerSelectedPicture.innerHTML === '<img src="images/tiger.png">') {
       console.log(`You win 🎉 `);
       gameState.playerScore += 1;
       playerScore.innerHTML = gameState.playerScore;
-    } else if (computerSelectedPicture.innerHTML === 'worm') {
+    } else if (
+      computerSelectedPicture.innerHTML === '<img src="images/worm.png">'
+    ) {
       console.log(`You loose 💩`);
       gameState.computerScore += 1;
       computerScore.innerHTML = gameState.computerScore;
