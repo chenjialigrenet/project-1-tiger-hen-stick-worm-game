@@ -9,18 +9,21 @@
   </head>
   <body>
     <main>
-      <section id="title">
+      <header id="title">
         <h1>Tiger-Hen-Worm-Stick</h1>
-        <p>Player score: 0</p>
-        <p>Computer score: 0</p>
-      </section>
+        <p>Player score: <span id="player-score">0</span></p>
+        <p>Computer score: <span id="computer-score">0</span></p>
+      </header>
 
       <section id="hero">
         <div id="player">
-          <button id="select-pic-previous">◀️</button>
-          <button id="select-pic-next">▶️</button>
+          <div id="player-select-buttons">
+            <button id="select-pic-previous">◀</button>
+            <button id="select-pic-next">▶</button>
+          </div>
+
           <div id="selected-pic">Player pictures</div>
-          <button id="confirm-select">👌 Choose me!</button>
+          <button id="confirm-select">Choose</button>
           <button id="play-again">🔄 Play again</button>
         </div>
         <div id="computer">
@@ -30,7 +33,7 @@
 
       <section id="middle-section">
         <img src="" alt="rule of the game" id="rule-pic" />
-        <div id="count-down">3,2,1,GO!</div>
+        <div id="count-down"></div>
       </section>
     </main>
     <script src="./script.js"></script>

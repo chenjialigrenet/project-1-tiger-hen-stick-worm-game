@@ -1,19 +1,18 @@
 saturday 10/7 
 - design
 - planning
-- basic HTML, CSS, Javascript structure
 
 sunday 11/7 
 - basic HTML, CSS, Javascript structure
 
 monday 12/7
-- Javascript
+- Javascript: selection, countdown
 
 tuesday 13/7
-- Javascript
+- Javascript: reveal + show congrats/you lose
 
 wednesday 14/7 
-- Javascript, CSS
+- CSS
 
 thursday 15/7 
 - CSS 
@@ -22,3 +21,10 @@ thursday 15/7
 
 friday 16/7 
 - AM: PPT
+
+
+////////////
+Javascript phases:
+1/ selection
+2/ countdown
+3/ reveal + show congrats/you lose
