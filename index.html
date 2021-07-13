@@ -8,34 +8,52 @@
     <link rel="stylesheet" href="./styles.css" />
   </head>
   <body>
-    <main>
-      <header id="title">
+    <div class="game-wrapper">
+      <header class="game-header">
         <h1>Tiger-Hen-Worm-Stick</h1>
         <p>Player score: <span id="player-score">0</span></p>
         <p>Computer score: <span id="computer-score">0</span></p>
+        <p id="rule">🐯 ⇨ 🐓 ⇨ 🐛 ⇨ 🥖⇨ 🐯 🔄</p>
       </header>
-
-      <section id="hero">
-        <div id="player">
-          <div id="player-select-buttons">
-            <button id="select-pic-previous">◀</button>
-            <button id="select-pic-next">▶</button>
+      <div class="game-area">
+        <div class="player-area player">
+          <div class="player-choice">
+            <span class="player-choice-selection">
+              <button id="select-pic-previous">◀</button>
+            </span>
+            <span class="player-choice-picture" id="selected-pic"> </span>
+            <span class="player-choice-selection">
+              <button id="select-pic-next">▶</button>
+            </span>
           </div>
-
-          <div id="selected-pic">Player pictures</div>
-          <button id="confirm-select">Choose</button>
-          <button id="play-again">🔄 Play again</button>
+          <div class="player-actions">
+            <button id="confirm-select">Yeay, you</button>
+            <button id="play-again">Play again 🔄</button>
+          </div>
         </div>
-        <div id="computer">
-          <div id="computer-pic">Computer pictures</div>
+        <div class="player-area computer">
+          <div class="player-choice">
+            <span class="player-choice-picture" id="computer-pic"> </span>
+          </div>
         </div>
-      </section>
-
-      <section id="middle-section">
-        <img src="" alt="rule of the game" id="rule-pic" />
         <div id="count-down"></div>
-      </section>
-    </main>
+      </div>
+      <div class="final-result-picture">
+        <img
+          src="/project-1/images/looser.jpeg"
+          alt="looser"
+          id="looser-pic"
+          class="hide"
+        />
+        <img
+          src="/project-1/images/kingcongrats.jpeg"
+          alt="congrats"
+          id="congrats-pic"
+          class="hide"
+        />
+      </div>
+      <button id="play-again-outside">Play again 🔄</button>
+    </div>
     <script src="./script.js"></script>
   </body>
 </html>
