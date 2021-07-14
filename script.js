@@ -20,12 +20,8 @@ const winSound = document.querySelector('#win-music');
 const looseSound = document.querySelector('#loose-music');
 const ceremonySound = document.querySelector('#ceremony-music');
 const failSound = document.querySelector('#looser-ending-music');
-
-///sound effect
-
-// backgroundMusic.onplay = function () {
-//   backgroundMusic.play();
-// };
+const tieSound = document.querySelector('#tie-music');
+const popupRule = document.querySelector('#myPopup');
 
 //// game state
 const gameState = {
@@ -40,6 +36,10 @@ const gameState = {
 //// functions
 const renderSelectedPicture = function () {
   playerSelectedPicture.innerHTML = `<img src="images/${gameState.playerSelection}.png">`;
+};
+
+const rulePopup = function () {
+  popupRule.classList.toggle('show');
 };
 
 const startTurn = function () {
@@ -174,6 +174,7 @@ const showFinalResult = function () {
     failSound.play();
   } else {
     countdownResultContainer.innerHTML = `It's a tie 🤝`;
+    tieSound.play();
   }
 };
 

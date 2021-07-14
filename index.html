@@ -15,13 +15,15 @@
           <div class="player-score">
             <p>Player score: <span id="player-score">0</span></p>
           </div>
+          <button id="play-again-outside" class="button">Play again 🔄</button>
           <div class="computer-score">
             <p>Computer score: <span id="computer-score">0</span></p>
           </div>
+          <div class="popup" onclick="rulePopup()">About
+            <img src="images/rule.png" alt="rule" class="popuptext" id="myPopup">
+          </div>
         </div>
-        <!-- <div class="rule">
-          <p>Rule: 🐯 ➡ 🐓 ➡ 🐛 ➡ 🥖 ➡ 🐯 🔄</p>
-        </div> -->
+        
         <p id="round">0 / 5</p>
       </header>
       <div class="game-area">
@@ -65,9 +67,9 @@
           class="hide"
         />
       </div>
-      <button id="play-again-outside" class="button">Play again 🔄</button>
-      <audio id="background-music" controls class="hide">
-        <source src="sounds/background-music.mp3" type="audio/mpeg" />
+     
+      <!-- <audio id="background-music" controls class="hide">
+        <source src="sounds/background-music.mp3" type="audio/mpeg" /> -->
       </audio>
       <audio id="win-music" controls class="hide">
         <source src="sounds/woohoo.mp3" type="audio/mpeg" />
@@ -80,6 +82,9 @@
       </audio>
       <audio id="looser-ending-music" controls class="hide">
         <source src="sounds/womp-womp.mp3" type="audio/mpeg" />
+      </audio>
+      <audio id="tie-music" controls class="hide">
+        <source src="sounds/level-up.mp3" type="audio/mpeg" />
       </audio>
     </div>
     <script src="./script.js"></script>

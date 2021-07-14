@@ -18,7 +18,6 @@ body {
   align-items: center;
   justify-content: center;
   color: rgb(31, 30, 30);
-  /* background-color: #f7f7f7; */
   background: #feac5e; /* fallback for old browsers */
   background: -webkit-linear-gradient(
     to right,
@@ -35,7 +34,8 @@ body {
 }
 
 .game-wrapper {
-  background-color: white;
+  /* background-color: white; */
+  opacity: 90%;
   border-radius: 10px;
   height: 90vh;
   width: 90vw;
@@ -71,16 +71,14 @@ body {
 .title-second-line {
   display: flex;
   justify-content: space-evenly;
-  padding-top: 1.5em;
+  align-items: flex-end;
+  padding-top: 1.1em;
   font-weight: bold;
   font-size: 1.1em;
 }
 
-.rule {
-  position: absolute;
-  right: 1.5em;
-  top: 5.5em;
-  z-index: 1;
+.rule img {
+  max-width: 5em;
 }
 
 #round {
@@ -169,34 +167,29 @@ body {
   width: 15em;
 }
 
+.button {
+  font-size: 0.9em;
+  font-weight: bolder;
+  height: 2em;
+  width: 10em;
+  border-radius: 0.5em;
+  border-style: none;
+  /* margin-top: 0.7em; */
+  background: linear-gradient(#eff1f1, #acabad);
+}
+
 .button.picture-selection {
   height: 1.5em;
   width: 1.5em;
   margin: 0.5em;
   border-radius: 50%;
   background: linear-gradient(#eff1f1, #acabad);
-}
-
-.button {
-  font-size: 0.9em;
-  font-weight: bolder;
-  height: 2.5em;
-  width: 10em;
-  border-radius: 0.5em;
-  border-style: none;
-  margin-top: 0.7em;
-  background: linear-gradient(#eff1f1, #acabad);
+  animation: shake 0.5s;
+  animation-iteration-count: 30s;
 }
 
 .button:hover {
   background: linear-gradient(#acabad, #eff1f1);
-}
-
-#play-again-outside {
-  position: absolute;
-  right: 6em;
-  top: 3em;
-  z-index: 2;
 }
 
 .hide {
@@ -211,6 +204,7 @@ body {
 
 #congrats-pic,
 #looser-pic {
+  margin-top: 1em;
   max-height: 65vh;
   max-width: auto;
   animation: shake 0.5s;
@@ -280,5 +274,61 @@ body {
   }
   100% {
     transform: translate(1px, -2px) rotate(-1deg);
+  }
+}
+
+/* Rule popup */
+/* Popup container - can be anything you want */
+.popup {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  text-decoration: underline;
+}
+
+.popup:hover {
+  color: blue;
+}
+
+/* The actual popup */
+.popup .popuptext {
+  visibility: hidden;
+  max-width: 12em;
+  /* background-color: rgb(255, 255, 255); */
+  text-align: center;
+  border-radius: 10px;
+  position: absolute;
+  z-index: 1;
+  top: 300%;
+  right: 1%;
+}
+
+/* Toggle this class - hide and show the popup */
+.popup .show {
+  visibility: visible;
+  -webkit-animation: fadeIn 1s;
+  animation: fadeIn 1s;
+}
+
+/* Add animation (fade in the popup) */
+@-webkit-keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
   }
 }
