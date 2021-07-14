@@ -15,10 +15,17 @@ const btnSelectNext = document.querySelector('#select-pic-next');
 const btnConfirmSelect = document.querySelector('#confirm-select');
 const btnPlayAgain = document.querySelector('#play-again');
 const btnPlayAgainOutside = document.querySelector('#play-again-outside');
+//const backgroundMusic = document.querySelector('#background-music');
+const winSound = document.querySelector('#win-music');
+const looseSound = document.querySelector('#loose-music');
+const ceremonySound = document.querySelector('#ceremony-music');
+const failSound = document.querySelector('#looser-ending-music');
 
 ///sound effect
-let winSound;
-let looseSound;
+
+// backgroundMusic.onplay = function () {
+//   backgroundMusic.play();
+// };
 
 //// game state
 const gameState = {
@@ -55,8 +62,6 @@ const startTurn = function () {
   showRound.innerHTML = `${gameState.round} / 5`;
 
   renderSelectedPicture();
-  // winSound = new sound('sounds/win.mp3');
-  // looseSound = new sound('sounds/loose.mp3');
 };
 
 // main entry point!
@@ -117,11 +122,13 @@ const showResult = function () {
       gameState.computerScore += 1;
       countdownResultContainer.innerHTML = `You loose 💩`;
       computerScore.innerHTML = gameState.computerScore;
+      looseSound.play();
       break;
     case 'win':
       gameState.playerScore += 1;
       countdownResultContainer.innerHTML = `You win 🎉`;
       playerScore.innerHTML = gameState.playerScore;
+      winSound.play();
       break;
     case 'tie':
       countdownResultContainer.innerHTML = `It's a tie 🤝`;
@@ -158,11 +165,13 @@ const showFinalResult = function () {
     congratsPicture.classList.remove('hide');
     gameArea.classList.add('hide');
     btnPlayAgainOutside.classList.remove('hide');
+    ceremonySound.play();
   } else if (gameState.playerScore < gameState.computerScore) {
     // countdownResultContainer.innerHTML = `You loose 💩`;
     looserPicture.classList.remove('hide');
     gameArea.classList.add('hide');
     btnPlayAgainOutside.classList.remove('hide');
+    failSound.play();
   } else {
     countdownResultContainer.innerHTML = `It's a tie 🤝`;
   }

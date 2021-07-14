@@ -8,9 +8,6 @@
     <link rel="stylesheet" href="./styles.css" />
   </head>
   <body>
-    <audio id="background-music" preload="auto">
-      <source src="/project-1/sounds/background-music.mp3" type="mp3" />
-    </audio>
     <div class="game-wrapper">
       <header class="game-header">
         <h1>Tiger, Hen, Worm, Stick</h1>
@@ -69,6 +66,21 @@
         />
       </div>
       <button id="play-again-outside" class="button">Play again 🔄</button>
+      <audio id="background-music" controls class="hide">
+        <source src="sounds/background-music.mp3" type="audio/mpeg" />
+      </audio>
+      <audio id="win-music" controls class="hide">
+        <source src="sounds/woohoo.mp3" type="audio/mpeg" />
+      </audio>
+      <audio id="loose-music" controls class="hide">
+        <source src="sounds/Uh-oh-sound-effect.mp3" type="audio/mpeg" />
+      </audio>
+      <audio id="ceremony-music" controls class="hide">
+        <source src="sounds/ceremony.mp3" type="audio/mpeg" />
+      </audio>
+      <audio id="looser-ending-music" controls class="hide">
+        <source src="sounds/womp-womp.mp3" type="audio/mpeg" />
+      </audio>
     </div>
     <script src="./script.js"></script>
   </body>
