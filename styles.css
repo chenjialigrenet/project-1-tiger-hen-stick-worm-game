@@ -17,8 +17,21 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  color: #333;
-  background-color: #f7f7f7;
+  color: rgb(31, 30, 30);
+  /* background-color: #f7f7f7; */
+  background: #feac5e; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to right,
+    #4bc0c8,
+    #c779d0,
+    #feac5e
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to right,
+    #4bc0c8,
+    #c779d0,
+    #feac5e
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 
 .game-wrapper {
@@ -38,15 +51,11 @@ body {
 }
 
 .game-header {
-  padding-top: 1em;
+  padding-top: 2em;
   height: 20vh;
   text-align: center;
   position: relative;
   z-index: 1;
-}
-
-.game-header p:first-of-type {
-  padding-top: 1em;
 }
 
 #player-score {
@@ -57,6 +66,29 @@ body {
 #computer-score {
   color: red;
   font-weight: bold;
+}
+
+.title-second-line {
+  display: flex;
+  justify-content: space-evenly;
+  padding-top: 1.5em;
+  font-weight: bold;
+  font-size: 1.1em;
+}
+
+.rule {
+  position: absolute;
+  right: 1.5em;
+  top: 5.5em;
+  z-index: 1;
+}
+
+#round {
+  position: absolute;
+  left: 0.8em;
+  top: 0.8em;
+  font-weight: bold;
+  font-size: 2.5em;
 }
 
 .game-area {
@@ -133,45 +165,38 @@ body {
 
 #selected-pic,
 #computer-pic {
-  height: 15em;
-  width: 13em;
+  height: 17em;
+  width: 15em;
 }
 
-#select-pic-previous,
-#select-pic-next {
-  height: 3.5em;
-  width: 3.5em;
-  margin: 0 0.5em 0.3em 0.5em;
+.button.picture-selection {
+  height: 1.5em;
+  width: 1.5em;
+  margin: 0.5em;
   border-radius: 50%;
-  border-style: none;
+  background: linear-gradient(#eff1f1, #acabad);
 }
 
-#confirm-select,
-#play-again,
-#play-again-outside {
-  font-size: 0.8em;
+.button {
+  font-size: 0.9em;
   font-weight: bolder;
   height: 2.5em;
   width: 10em;
   border-radius: 0.5em;
   border-style: none;
   margin-top: 0.7em;
+  background: linear-gradient(#eff1f1, #acabad);
+}
+
+.button:hover {
+  background: linear-gradient(#acabad, #eff1f1);
 }
 
 #play-again-outside {
   position: absolute;
-  right: 5em;
+  right: 6em;
   top: 3em;
   z-index: 2;
-}
-
-#rule {
-  position: absolute;
-  right: 1.5em;
-  top: 5.5em;
-  height: 7em;
-  width: auto;
-  z-index: 1;
 }
 
 .hide {
@@ -188,10 +213,8 @@ body {
 #looser-pic {
   max-height: 65vh;
   max-width: auto;
-}
-
-body#tinymce {
-  background: #ffffff;
+  animation: shake 0.5s;
+  animation-iteration-count: infinite;
 }
 
 /* card flip animation */
@@ -220,5 +243,42 @@ body#tinymce {
   100% {
     -webkit-transform: rotateY(180deg);
     transform: rotateY(180deg);
+  }
+}
+
+/*shake final result pictures animation*/
+@keyframes shake {
+  0% {
+    transform: translate(1px, 1px) rotate(0deg);
+  }
+  10% {
+    transform: translate(-1px, -2px) rotate(-1deg);
+  }
+  20% {
+    transform: translate(-3px, 0px) rotate(1deg);
+  }
+  30% {
+    transform: translate(3px, 2px) rotate(0deg);
+  }
+  40% {
+    transform: translate(1px, -1px) rotate(1deg);
+  }
+  50% {
+    transform: translate(-1px, 2px) rotate(-1deg);
+  }
+  60% {
+    transform: translate(-3px, 1px) rotate(0deg);
+  }
+  70% {
+    transform: translate(3px, 1px) rotate(-1deg);
+  }
+  80% {
+    transform: translate(-1px, -1px) rotate(1deg);
+  }
+  90% {
+    transform: translate(1px, 2px) rotate(0deg);
+  }
+  100% {
+    transform: translate(1px, -2px) rotate(-1deg);
   }
 }

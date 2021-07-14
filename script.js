@@ -3,6 +3,7 @@ const pictures = ['tiger', 'hen', 'worm', 'stick'];
 //// prepare variables for all elements
 const playerScore = document.querySelector('#player-score');
 const computerScore = document.querySelector('#computer-score');
+const showRound = document.querySelector('#round');
 const playerSelectedPicture = document.querySelector('#selected-pic');
 const computerSelectedPicture = document.querySelector('#computer-pic');
 const looserPicture = document.querySelector('#looser-pic');
@@ -14,6 +15,10 @@ const btnSelectNext = document.querySelector('#select-pic-next');
 const btnConfirmSelect = document.querySelector('#confirm-select');
 const btnPlayAgain = document.querySelector('#play-again');
 const btnPlayAgainOutside = document.querySelector('#play-again-outside');
+
+///sound effect
+let winSound;
+let looseSound;
 
 //// game state
 const gameState = {
@@ -32,15 +37,29 @@ const renderSelectedPicture = function () {
 
 const startTurn = function () {
   countdownResultContainer.classList.add('hide');
+  computerSelectedPicture.classList.add('hide');
+  gameArea.classList.remove('hide');
+  looserPicture.classList.add('hide');
+  congratsPicture.classList.add('hide');
   btnPlayAgain.classList.add('hide');
   btnPlayAgainOutside.classList.add('hide');
+  btnConfirmSelect.classList.remove('hide');
+  btnSelectNext.classList.remove('hide');
+  btnSelectPrevious.classList.remove('hide');
+
+  gameState.round = 0;
+  gameState.playerScore = 0;
+  gameState.computerScore = 0;
   playerScore.innerHTML = `0`;
   computerScore.innerHTML = `0`;
-  //computerSelectedPicture.classList.add('hide');
+  showRound.innerHTML = `${gameState.round} / 5`;
+
   renderSelectedPicture();
+  // winSound = new sound('sounds/win.mp3');
+  // looseSound = new sound('sounds/loose.mp3');
 };
 
-//// main entry point!
+// main entry point!
 startTurn();
 
 const selectNextPicture = function () {
@@ -53,6 +72,7 @@ const selectNextPicture = function () {
   } else if (gameState.playerSelection === 'tiger') {
     gameState.playerSelection = 'hen';
   }
+  computerSelectedPicture.classList.add('hide');
   renderSelectedPicture();
 };
 
@@ -66,6 +86,7 @@ const selectPreviousPicture = function () {
   } else if (gameState.playerSelection === 'worm') {
     gameState.playerSelection = 'hen';
   }
+  computerSelectedPicture.classList.add('hide');
   renderSelectedPicture();
 };
 
@@ -93,19 +114,16 @@ const gameResult = function (playerSelection, computerSelection) {
 const showResult = function () {
   switch (gameResult(gameState.playerSelection, gameState.computerSelection)) {
     case 'lose':
-      //console.log(`You loose 💩`);
       gameState.computerScore += 1;
       countdownResultContainer.innerHTML = `You loose 💩`;
       computerScore.innerHTML = gameState.computerScore;
       break;
     case 'win':
-      //console.log(`You win 🎉 `);
       gameState.playerScore += 1;
       countdownResultContainer.innerHTML = `You win 🎉`;
       playerScore.innerHTML = gameState.playerScore;
       break;
     case 'tie':
-      //console.log(`It's a tie 🤝`);
       countdownResultContainer.innerHTML = `It's a tie 🤝`;
       break;
   }
@@ -120,34 +138,34 @@ const showResult = function () {
   } else {
     setTimeout(() => {
       countdownResultContainer.classList.add('hide');
-      btnConfirmSelect.classList.remove('hide');
       computerSelectedPicture.classList.remove('hide');
       computerSelectedPicture.classList.add('flip-vertical-right');
+      btnSelectNext.classList.remove('hide');
+      btnSelectPrevious.classList.remove('hide');
+      btnConfirmSelect.classList.remove('hide');
     }, 500);
   }
 };
 
 const showFinalResult = function () {
   btnConfirmSelect.classList.add('hide');
+  computerSelectedPicture.classList.remove('hide');
+  btnPlayAgain.classList.remove('hide');
 
-  //render final result
-  // BIG You Win / You Lose
+  //render final result, BIG You Win / You Lose
   if (gameState.playerScore > gameState.computerScore) {
-    countdownResultContainer.innerHTML = `You win 🎉`;
-    gameArea.classList.add('hide');
+    //countdownResultContainer.innerHTML = `You win 🎉`;
     congratsPicture.classList.remove('hide');
+    gameArea.classList.add('hide');
     btnPlayAgainOutside.classList.remove('hide');
   } else if (gameState.playerScore < gameState.computerScore) {
-    countdownResultContainer.innerHTML = `You loose 💩`;
-    gameArea.classList.add('hide');
+    // countdownResultContainer.innerHTML = `You loose 💩`;
     looserPicture.classList.remove('hide');
+    gameArea.classList.add('hide');
     btnPlayAgainOutside.classList.remove('hide');
   } else {
     countdownResultContainer.innerHTML = `It's a tie 🤝`;
   }
-
-  computerSelectedPicture.classList.remove('hide');
-  btnPlayAgain.classList.remove('hide');
 };
 
 const countDown = function (countDownValue) {
@@ -157,11 +175,9 @@ const countDown = function (countDownValue) {
   //count down animation
   setTimeout(() => {
     countDown(countDownValue - 1);
-  }, 1000);
+  }, 500);
 
   countdownResultContainer.innerHTML = countDownValue;
-
-  computerSelectedPicture.classList.add('hide');
 };
 
 //// add 4 event listeners
@@ -173,10 +189,11 @@ btnConfirmSelect.addEventListener('click', () => {
   //don't know if game phase need to exist???
   // gameState.phase = 'countdown';
   gameState.round += 1;
+  showRound.innerHTML = `${gameState.round} / 5`;
 
   countdownResultContainer.classList.remove('hide');
-  //btnSelectNext.classList.add('hide');
-  //btnSelectPrevious.classList.add('hide');
+  btnSelectNext.classList.add('hide');
+  btnSelectPrevious.classList.add('hide');
 
   //generate a random computer picture
   let randomComputerPicture =
@@ -186,19 +203,15 @@ btnConfirmSelect.addEventListener('click', () => {
   computerSelectedPicture.innerHTML = `<img src="images/${randomComputerPicture}.png">`;
 
   btnConfirmSelect.classList.add('hide');
+  computerSelectedPicture.classList.add('hide');
 
   countDown(3);
 });
 
 btnPlayAgain.addEventListener('click', () => {
   startTurn();
-  btnConfirmSelect.classList.remove('hide');
 });
 
 btnPlayAgainOutside.addEventListener('click', () => {
   startTurn();
-  btnConfirmSelect.classList.remove('hide');
-  gameArea.classList.remove('hide');
-  looserPicture.classList.add('hide');
-  congratsPicture.classList.add('hide');
 });
