@@ -4,95 +4,32 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Tiger, Hen, Worm, Stick</title>
-    <link rel="stylesheet" href="./styles.css" />
+    <title>Home page</title>
+    <link rel="stylesheet" href="homtStyle.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+    href="https://fonts.googleapis.com/css2?family=Otomanopee+One&display=swap"
+    rel="stylesheet"
   </head>
   <body>
-    <div class="game-wrapper">
-      <header class="game-header">
-        <!-- <h1>Tiger, Hen, Worm, Stick</h1> -->
-
-        <div class="title-second-line">
-          <div><p id="round">0 / 5</p></div>
-          <div class="player-score">
-            <p>Player score: <span id="player-score">0</span></p>
-          </div>
-          <button id="play-again-outside" class="button">Play again 🔄</button>
-          <div class="computer-score">
-            <p>Computer score: <span id="computer-score">0</span></p>
-          </div>
-          <div class="popup" onclick="rulePopup()">
-            About
-            <img
-              src="images/rule.png"
-              alt="rule"
-              class="popuptext"
-              id="myPopup"
-            />
-          </div>
-        </div>
-      </header>
-      <div class="game-area">
-        <div class="player-area player">
-          <div class="player-choice">
-            <span class="player-choice-selection">
-              <button id="select-pic-previous" class="button picture-selection">
-                &#8249;
-              </button>
-            </span>
-            <span class="player-choice-picture" id="selected-pic"> </span>
-            <span class="player-choice-selection">
-              <button id="select-pic-next" class="button picture-selection">
-                &#8250;
-              </button>
-            </span>
-          </div>
-          <div class="player-actions">
-            <button id="confirm-select" class="button">Choose</button>
-            <button id="play-again" class="button">Play Again 🔄</button>
-          </div>
-        </div>
-        <div class="player-area computer">
-          <div class="player-choice">
-            <span class="player-choice-picture" id="computer-pic"> </span>
-          </div>
-        </div>
-        <div id="count-down"></div>
-      </div>
-      <div class="final-result-picture">
-        <img
-          src="images/looser.jpeg"
-          alt="looser"
-          id="looser-pic"
-          class="hide"
-        />
-        <img
-          src="images/kingcongrats.jpeg"
-          alt="congrats"
-          id="congrats-pic"
-          class="hide"
-        />
-      </div>
-
-      <!-- <audio id="background-music" controls class="hide">
-        <source src="sounds/background-music.mp3" type="audio/mpeg" /> -->
-      </audio>
-      <audio id="win-music" controls class="hide">
-        <source src="sounds/woohoo.mp3" type="audio/mpeg" />
-      </audio>
-      <audio id="loose-music" controls class="hide">
-        <source src="sounds/Uh-oh-sound-effect.mp3" type="audio/mpeg" />
-      </audio>
-      <audio id="ceremony-music" controls class="hide">
-        <source src="sounds/ceremony.mp3" type="audio/mpeg" />
-      </audio>
-      <audio id="looser-ending-music" controls class="hide">
-        <source src="sounds/womp-womp.mp3" type="audio/mpeg" />
-      </audio>
-      <audio id="tie-music" controls class="hide">
-        <source src="sounds/level-up.mp3" type="audio/mpeg" />
-      </audio>
+    <div class="description">
+      <p>What?! A next-gen Rock, Paper, Scissors</p>
     </div>
-    <script src="./script.js"></script>
+
+    <h1>Tiger, Hen, Worm, Stick</h1>
+
+    <div class="start-container">
+      <a href="game.html" class="start">Play Game</a>
+    </div>
+
+    <div class="gif-container">
+      <iframe
+        src="https://giphy.com/embed/JYOqCCqVzJavK"
+        width="384"
+        height="368"
+        frameborder="0"
+      ></iframe>
+    </div>
   </body>
 </html>
