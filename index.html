@@ -10,8 +10,10 @@
   <body>
     <div class="game-wrapper">
       <header class="game-header">
-        <h1>Tiger, Hen, Worm, Stick</h1>
+        <!-- <h1>Tiger, Hen, Worm, Stick</h1> -->
+
         <div class="title-second-line">
+          <div><p id="round">0 / 5</p></div>
           <div class="player-score">
             <p>Player score: <span id="player-score">0</span></p>
           </div>
@@ -19,12 +21,16 @@
           <div class="computer-score">
             <p>Computer score: <span id="computer-score">0</span></p>
           </div>
-          <div class="popup" onclick="rulePopup()">About
-            <img src="images/rule.png" alt="rule" class="popuptext" id="myPopup">
+          <div class="popup" onclick="rulePopup()">
+            About
+            <img
+              src="images/rule.png"
+              alt="rule"
+              class="popuptext"
+              id="myPopup"
+            />
           </div>
         </div>
-        
-        <p id="round">0 / 5</p>
       </header>
       <div class="game-area">
         <div class="player-area player">
@@ -42,8 +48,8 @@
             </span>
           </div>
           <div class="player-actions">
-            <button id="confirm-select" class="button">Yeah, you</button>
-            <button id="play-again" class="button">Play again 🔄</button>
+            <button id="confirm-select" class="button">Choose</button>
+            <button id="play-again" class="button">Play Again 🔄</button>
           </div>
         </div>
         <div class="player-area computer">
@@ -67,7 +73,7 @@
           class="hide"
         />
       </div>
-     
+
       <!-- <audio id="background-music" controls class="hide">
         <source src="sounds/background-music.mp3" type="audio/mpeg" /> -->
       </audio>

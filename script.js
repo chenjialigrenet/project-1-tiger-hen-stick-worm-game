@@ -156,7 +156,7 @@ const showResult = function () {
 
 const showFinalResult = function () {
   btnConfirmSelect.classList.add('hide');
-  computerSelectedPicture.classList.remove('hide');
+  //computerSelectedPicture.classList.remove('hide');
   btnPlayAgain.classList.remove('hide');
 
   //render final result, BIG You Win / You Lose
@@ -180,6 +180,7 @@ const showFinalResult = function () {
 
 const countDown = function (countDownValue) {
   if (countDownValue === 0) {
+    computerSelectedPicture.classList.remove('hide');
     return showResult();
   }
   //count down animation

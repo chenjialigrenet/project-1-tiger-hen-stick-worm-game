@@ -1,0 +1,119 @@
+@import url('https://fonts.googleapis.com/css2?family=Otomanopee+One&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 30px;
+}
+
+body {
+  font-family: 'Otomanopee One', sans-serif;
+  height: 100vh;
+  /* display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center; */
+  color: rgb(31, 30, 30);
+  background: #feac5e; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to right,
+    #4bc0c8,
+    #c779d0,
+    #feac5e
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to right,
+    #4bc0c8,
+    #c779d0,
+    #feac5e
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+h1 {
+  color: rgb(46, 45, 45);
+  /* text-shadow: 0.05em 0.05em #fcfcfc; */
+  text-align: center;
+  padding-top: 1.5em;
+}
+
+.description {
+  color: white;
+  padding-top: 1em;
+  padding-left: 1em;
+}
+
+/* .container {
+  display: flex;
+  justify-content: center;
+}*/
+
+.start-container {
+  display: flex;
+  justify-content: center;
+}
+
+.start {
+  height: 2em;
+  width: 8em;
+  border-radius: 0.5em;
+  color: rgb(58, 56, 56);
+  /* border-style: double; */
+  background: #eff1f1;
+  opacity: 60%;
+  text-align: center;
+  text-decoration: none;
+  margin-top: 1em;
+}
+
+.start:hover {
+  background: #eff1f1;
+  opacity: 90%;
+  animation: shake 0.5s;
+  animation-iteration-count: infinite;
+}
+
+@keyframes shake {
+  0% {
+    transform: translate(1px, 1px) rotate(0deg);
+  }
+  10% {
+    transform: translate(-1px, -2px) rotate(-1deg);
+  }
+  20% {
+    transform: translate(-3px, 0px) rotate(1deg);
+  }
+  30% {
+    transform: translate(3px, 2px) rotate(0deg);
+  }
+  40% {
+    transform: translate(1px, -1px) rotate(1deg);
+  }
+  50% {
+    transform: translate(-1px, 2px) rotate(-1deg);
+  }
+  60% {
+    transform: translate(-3px, 1px) rotate(0deg);
+  }
+  70% {
+    transform: translate(3px, 1px) rotate(-1deg);
+  }
+  80% {
+    transform: translate(-1px, -1px) rotate(1deg);
+  }
+  90% {
+    transform: translate(1px, 2px) rotate(0deg);
+  }
+  100% {
+    transform: translate(1px, -2px) rotate(-1deg);
+  }
+}
+
+.gif-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 1em;
+}
