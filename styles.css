@@ -34,13 +34,11 @@ body {
 }
 
 .game-wrapper {
-  /* background-color: white; */
-  opacity: 90%;
-  border-radius: 10px;
   height: 90vh;
   width: 90vw;
   margin: auto;
   border: 1px none #999;
+  border-radius: 10px;
   overflow: hidden;
   display: flex;
   flex-direction: column;
@@ -68,7 +66,7 @@ body {
   font-weight: bold;
 }
 
-.title-second-line {
+.title-line {
   display: flex;
   justify-content: space-evenly;
   align-items: flex-end;
@@ -78,15 +76,11 @@ body {
 }
 
 .rule img {
-  max-width: 5em;
+  max-width: 50px;
 }
 
 #round {
-  /* position: absolute;
-  left: 0.8em;
-  top: 0.8em; */
-  font-weight: bold;
-  /* font-size: 2.5em; */
+  font-weight: bolder;
 }
 
 .game-area {
@@ -176,14 +170,14 @@ body {
   width: 10em;
   border-radius: 0.5em;
   border-style: none;
-  /* margin-top: 0.7em; */
+  margin-top: 0.7em;
   background: linear-gradient(#eff1f1, #acabad);
 }
 
 .button.picture-selection {
   height: 1.5em;
   width: 1.5em;
-  margin: 0.5em;
+  margin: 0.7em;
   border-radius: 50%;
   background: linear-gradient(#eff1f1, #acabad);
   animation: shake 0.5s;
@@ -192,10 +186,6 @@ body {
 
 .button:hover {
   background: linear-gradient(#acabad, #eff1f1);
-}
-
-.hide {
-  display: none;
 }
 
 .final-result-picture {
@@ -299,14 +289,13 @@ body {
 /* The actual popup */
 .popup .popuptext {
   visibility: hidden;
-  max-width: 12em;
-  /* background-color: rgb(255, 255, 255); */
+  max-width: 7em;
   text-align: center;
   border-radius: 10px;
-  position: absolute;
-  z-index: 1;
-  top: 300%;
-  right: 1%;
+  position: fixed;
+  top: 8rem;
+  right: 11rem;
+  z-index: 3;
 }
 
 /* Toggle this class - hide and show the popup */
@@ -333,4 +322,8 @@ body {
   to {
     opacity: 1;
   }
+}
+
+.hide {
+  display: none;
 }

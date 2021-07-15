@@ -13,10 +13,6 @@ html {
 body {
   font-family: 'Otomanopee One', sans-serif;
   height: 100vh;
-  /* display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center; */
   color: rgb(31, 30, 30);
   background: #feac5e; /* fallback for old browsers */
   background: -webkit-linear-gradient(
@@ -34,22 +30,54 @@ body {
 }
 
 h1 {
+  display: inline-block;
+  position: relative;
   color: rgb(46, 45, 45);
-  /* text-shadow: 0.05em 0.05em #fcfcfc; */
-  text-align: center;
-  padding-top: 1.5em;
+  margin-top: 1.5em;
+}
+
+h1::before {
+  content: '';
+  position: absolute;
+  width: 120%;
+  height: 100%;
+  top: -0.5em;
+  left: -2em;
+  background: rgba(253, 253, 253, 0.705);
+  z-index: -1;
+}
+
+h1::after {
+  content: '';
+  position: absolute;
+  width: 120%;
+  height: 100%;
+  top: 0.5em;
+  left: -1em;
+  background: rgba(253, 253, 253, 0.705);
+  z-index: -2;
+}
+
+.title-container {
+  display: flex;
+  justify-content: center;
 }
 
 .description {
-  color: white;
+  color: rgb(58, 56, 56);
   padding-top: 1em;
   padding-left: 1em;
+  animation: flyIn 7s linear;
 }
 
-/* .container {
-  display: flex;
-  justify-content: center;
-}*/
+@keyframes flyIn {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(0%);
+  }
+}
 
 .start-container {
   display: flex;
@@ -60,16 +88,16 @@ h1 {
   height: 2em;
   width: 8em;
   border-radius: 0.5em;
-  color: rgb(58, 56, 56);
-  /* border-style: double; */
-  background: #eff1f1;
-  opacity: 60%;
+  color: rgb(255, 255, 255);
+  background: rgba(58, 56, 56, 0.685);
   text-align: center;
   text-decoration: none;
-  margin-top: 1em;
+  margin-top: 2em;
+  padding-top: 0.2em;
 }
 
 .start:hover {
+  color: rgb(58, 56, 56);
   background: #eff1f1;
   opacity: 90%;
   animation: shake 0.5s;
@@ -115,5 +143,5 @@ h1 {
 .gif-container {
   display: flex;
   justify-content: center;
-  margin-top: 1em;
+  margin-top: 0.5em;
 }

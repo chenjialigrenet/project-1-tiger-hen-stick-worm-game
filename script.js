@@ -15,7 +15,6 @@ const btnSelectNext = document.querySelector('#select-pic-next');
 const btnConfirmSelect = document.querySelector('#confirm-select');
 const btnPlayAgain = document.querySelector('#play-again');
 const btnPlayAgainOutside = document.querySelector('#play-again-outside');
-//const backgroundMusic = document.querySelector('#background-music');
 const winSound = document.querySelector('#win-music');
 const looseSound = document.querySelector('#loose-music');
 const ceremonySound = document.querySelector('#ceremony-music');
@@ -30,7 +29,6 @@ const gameState = {
   computerScore: 0,
   playerScore: 0,
   round: 0,
-  // phase: 'selection',
 };
 
 //// functions
@@ -161,13 +159,11 @@ const showFinalResult = function () {
 
   //render final result, BIG You Win / You Lose
   if (gameState.playerScore > gameState.computerScore) {
-    //countdownResultContainer.innerHTML = `You win 🎉`;
     congratsPicture.classList.remove('hide');
     gameArea.classList.add('hide');
     btnPlayAgainOutside.classList.remove('hide');
     ceremonySound.play();
   } else if (gameState.playerScore < gameState.computerScore) {
-    // countdownResultContainer.innerHTML = `You loose 💩`;
     looserPicture.classList.remove('hide');
     gameArea.classList.add('hide');
     btnPlayAgainOutside.classList.remove('hide');
@@ -197,8 +193,6 @@ btnSelectPrevious.addEventListener('click', selectPreviousPicture);
 
 btnConfirmSelect.addEventListener('click', () => {
   //update game state
-  //don't know if game phase need to exist???
-  // gameState.phase = 'countdown';
   gameState.round += 1;
   showRound.innerHTML = `${gameState.round} / 5`;
 
