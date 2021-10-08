@@ -1,6 +1,6 @@
 # Tiger, Hen, Stick, Worm Game
 ## About:
-###### A rock, paper, scissors kinda game 
+First bootcamp project, developped in 4 days. This is a slightly twisted version of the rock, paper, scissors game. 
 ## How to play:
 - A single player
 - 5 rounds in total
